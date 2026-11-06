@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a problem with the samsara CLI
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For security issues, email security@samsara.com instead — do not open an issue.
+  - type: input
+    id: version
+    attributes:
+      label: CLI version
+      description: Output of `samsara version`
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS (Apple silicon)
+        - macOS (Intel)
+        - Linux (x86_64)
+        - Linux (arm64)
+        - Windows (x86_64)
+        - Windows (arm64)
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you ran, what you expected, what happened instead
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Command output
+      description: Run with the output you saw; redact tokens and organization IDs if needed
